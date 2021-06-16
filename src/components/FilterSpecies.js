@@ -1,6 +1,10 @@
-const FilterSpecies = (Filters) => {
+const FilterSpecies = (props) => {
   const handleChange = (ev) => {
-    console.log(ev.type, Filters.ev.target.value);
+    console.log(ev.type, ev.target.value);
+    props.handleFilters({
+      value: ev.target.value,
+      key: "species",
+    });
   };
   return (
     <>

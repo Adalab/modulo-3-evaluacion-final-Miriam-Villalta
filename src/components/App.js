@@ -9,6 +9,8 @@ import api from "../services/api.js";
 
 const App = () => {
   const [characters, setCharacters] = useState([]);
+  const [filterName, setFilterName] = useState("");
+  const [filterSpecie, setFilterSpecie] = useState();
   useEffect(() => {
     api().then((data) => {
       setCharacters(data);
@@ -16,13 +18,33 @@ const App = () => {
   }, []);
 
   const handleFilters = (data) => {
-    console.log(data);
+    if (data.key === "name") {
+      setFilterName(data.value);
+    } else {
+      setFilterSpecie(data.value);
+    }
   };
+
+  const filteredCharacter = characters
+    .filter((characters) => {
+      return characters.name
+        .toLowerCase()
+        .toUpperCase()
+        .includes(filterName.toLowerCase().toUpperCase());
+    })
+    .filter((characters) => {
+      console.log(characters.species, filterSpecie);
+      return characters.species
+        .toLowerCase()
+        .toUpperCase()
+        .includes(filterSpecie.toLowerCase().toUpperCase());
+    });
+
   return (
     <div className="App">
       <Header />
       <Filters handleFilters={handleFilters}></Filters>
-      <CharacterList characters={characters} />
+      <CharacterList characters={(characters, filteredCharacter)} />
       {/*<Switch>
         <Route path="/CharacterDetail" component={CharacterDetail} />
       </Switch>*/}

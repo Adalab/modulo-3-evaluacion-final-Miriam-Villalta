@@ -1,12 +1,12 @@
 import FilterName from "./FilterName";
 import FilterSpecies from "./FilterSpecies";
-const Filters = (handleFilters) => {
-  console.log(handleFilters);
+const Filters = (props) => {
+  console.log(props);
   return (
     <section>
       <form action="">
-        <FilterName handleFilters={handleFilters}></FilterName>
-        <FilterSpecies></FilterSpecies>
+        <FilterName handleFilters={props.handleFilters}></FilterName>
+        <FilterSpecies handleFilters={props.handleFilters}></FilterSpecies>
       </form>
     </section>
   );

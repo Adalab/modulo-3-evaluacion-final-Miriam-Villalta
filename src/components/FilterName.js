@@ -1,12 +1,12 @@
-const FilterName = ({ handleFilters }) => {
+const FilterName = (props) => {
   const handleChange = (ev) => {
     console.log(ev.type, ev.target.value);
-    handleFilters();
+    props.handleFilters({
+      value: ev.target.value,
+      key: "name",
+    });
   };
-  /*{
-    value: ev.target.value,
-    key: "name",
-  }*/
+
   return (
     <>
       <label htmlFor="">Nombre </label>
