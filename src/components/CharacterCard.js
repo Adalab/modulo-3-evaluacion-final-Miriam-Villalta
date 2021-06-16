@@ -1,19 +1,17 @@
 import "../stylesheets/_characterCard.scss";
-import api from "../services/api"
-function CharacterCard({name, id, species, image}) {
-    api()
+function CharacterCard({ characters }) {
   return (
-    <ul className="card">
+    <>
       <li className="card__img">
-        <img src="" alt="" />
+        <img src={characters.image} alt={characters.name} />
       </li>
       <li className="card__name">
-        <h2>Nombre</h2>
+        <h2>{characters.name}</h2>
       </li>
       <li className="card__specie">
-        <p>Especie</p>
+        <p>{characters.species}</p>
       </li>
-    </ul>
+    </>
   );
 }
 
