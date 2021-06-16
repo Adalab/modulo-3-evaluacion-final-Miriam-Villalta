@@ -1,34 +1,45 @@
-.card__img {
-  //color:white;
-  list-style: none;
-  background-color: rgb(10, 212, 248);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 150px;
+.card {
+  display: grid;
+  grid-template-columns: 200px 200px 200px 200px;
+  grid-template-rows: 250px 250px 250px 250px 250px;
+  margin-right: 0px;
+  align-self: center;
 
-  &--photo {
+  &__img {
+    list-style: none;
+    background-color: rgb(10, 212, 248);
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-self: center;
+
     width: 150px;
-  }
-  &--name {
-    text-decoration: none;
-    font-size: 20px;
-    font-style: normal;
-    margin: 0px;
-    padding: 5px;
-    padding-bottom: 0px;
-  }
+    height: 215px;
 
-  &--specie {
-    margin: 0px;
-    padding-inline: 5px;
-    padding-bottom: 5px;
+    &--photo {
+      width: 150px;
+    }
+    &--name {
+      text-decoration: none;
+      font-size: 12px;
+      font-style: normal;
+      margin: 0px;
+      padding: 6px;
+      padding-bottom: 0px;
+      padding-right: 0px;
+    }
+
+    &--specie {
+      margin: 0px;
+      padding: 6px;
+      padding-top: 3px;
+      font-size: 12px;
+    }
   }
-}
-a:link,
-a:visited,
-a:active {
-  text-decoration: none;
-  color: white;
+  a:link,
+  a:visited,
+  a:active {
+    text-decoration: none;
+    color: white;
+  }
 }

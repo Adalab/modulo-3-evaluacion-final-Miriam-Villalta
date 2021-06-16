@@ -1,7 +1,10 @@
 .form {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
+  align-items: center;
+  width: 100%;
+
   &__container {
     &--name {
       padding: 5px;
@@ -12,4 +15,14 @@
       color: white;
     }
   }
+}
+
+.search {
+  background-color: black;
+  border: solid aquamarine 1px;
+  color: rgb(0, 196, 147);
+}
+
+input:focus {
+  border: solid aquamarine 1px;
 }

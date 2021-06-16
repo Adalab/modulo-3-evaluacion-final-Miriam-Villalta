@@ -1,3 +1,5 @@
+import "../stylesheets/_filters.scss";
+
 const FilterSpecies = (props) => {
   const handleChange = (ev) => {
     console.log(ev.type, ev.target.value);
@@ -11,7 +13,12 @@ const FilterSpecies = (props) => {
       <label htmlFor="" className="form__container--specie">
         Especie{" "}
       </label>
-      <input type="text" className="search" onChange={handleChange} />
+      <input
+        placeholder="input cambio de color"
+        type="text"
+        className="search"
+        onChange={handleChange}
+      />
     </>
   );
 };

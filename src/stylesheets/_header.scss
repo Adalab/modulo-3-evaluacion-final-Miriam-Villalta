@@ -1,10 +1,8 @@
 .header-image {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 600px;
+  width: 400px;
   padding: 10px;
   margin: 0px;
+  align-self: center;
   &__img {
     width: 400px;
   }
