@@ -1,0 +1,17 @@
+.info-container {
+  background-color: black;
+}
+
+.info {
+  width: 400px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(106, 208, 248);
+}
+
+.info-text {
+  color: white;
+}

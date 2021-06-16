@@ -8,7 +8,9 @@ const FilterSpecies = (props) => {
   };
   return (
     <>
-      <label htmlFor="">Especie </label>
+      <label htmlFor="" className="form__container--specie">
+        Especie{" "}
+      </label>
       <input type="text" className="search" onChange={handleChange} />
     </>
   );

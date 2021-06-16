@@ -1,0 +1,15 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  &__container {
+    &--name {
+      padding: 5px;
+      color: white;
+    }
+    &--specie {
+      padding: 5px;
+      color: white;
+    }
+  }
+}

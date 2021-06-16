@@ -1,10 +1,11 @@
 import FilterName from "./FilterName";
 import FilterSpecies from "./FilterSpecies";
+import "../stylesheets/_filters.scss";
+
 const Filters = (props) => {
-  console.log(props);
   return (
-    <section>
-      <form action="">
+    <section className="form">
+      <form action="" className="form__container">
         <FilterName handleFilters={props.handleFilters}></FilterName>
         <FilterSpecies handleFilters={props.handleFilters}></FilterSpecies>
       </form>

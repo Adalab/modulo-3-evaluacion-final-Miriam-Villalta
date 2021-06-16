@@ -5,10 +5,13 @@ const api = () => {
     .then((data) => {
       return data.results.map((user) => {
         return {
-            name: user.name,
-            id: user.id,
-            species: user.species,
-            image: user.image 
+          name: user.name,
+          id: user.id,
+          species: user.species,
+          image: user.image,
+          status: user.status,
+          origin: user.origin,
+          episode: user.episode,
         };
       });
     });

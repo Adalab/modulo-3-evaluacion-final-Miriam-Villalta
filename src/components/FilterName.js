@@ -9,7 +9,9 @@ const FilterName = (props) => {
 
   return (
     <>
-      <label htmlFor="">Nombre </label>
+      <label htmlFor="" className="form__container--name">
+        Nombre{" "}
+      </label>
       <input type="text" className="search" onChange={handleChange} />
     </>
   );
