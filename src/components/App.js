@@ -9,10 +9,9 @@ import api from "../services/api.js";
 import ls from "../services/localstorage";
 
 const App = () => {
-  const [characters, setCharacters] = useState([]);
+  const [characters, setCharacters] = useState(ls.get("characters", []));
   const [filterName, setFilterName] = useState("");
   const [filterSpecie, setFilterSpecie] = useState("");
-  const [characterDetail, setcharacterDetail] = useState("");
 
   useEffect(() => {
     if (characters.length === 0) {
@@ -23,7 +22,7 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    ls.set("character detail", characterDetail);
+    ls.set("characters", characters);
   }, [characters]);
 
   const handleFilters = (data) => {
@@ -31,8 +30,6 @@ const App = () => {
       setFilterName(data.value);
     } else if (data.key === "species") {
       setFilterSpecie(data.value);
-    } else {
-      return <h2>No hay ningún personaje que coincida con la búsqueda</h2>;
     }
   };
 
@@ -53,8 +50,9 @@ const App = () => {
   const renderCharacterDetail = (props) => {
     const characterId = props.match.params.id;
     const findCharacter = characters.find((characters) => {
-      return characters.id === characterId;
+      return characters.id === parseInt(characterId);
     });
+    console.log(findCharacter);
     if (findCharacter !== undefined) {
       return <CharacterDetail characters={findCharacter} />;
     }
@@ -69,9 +67,7 @@ const App = () => {
           <CharacterList characters={(characters, filteredCharacter)} />
         </Route>
 
-        <Route path="/characters/:id" render={renderCharacterDetail}>
-          <CharacterDetail characters={characters} />
-        </Route>
+        <Route path="/characters/:id" render={renderCharacterDetail} />
       </Switch>
     </div>
   );

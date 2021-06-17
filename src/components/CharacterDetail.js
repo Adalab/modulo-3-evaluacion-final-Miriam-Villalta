@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "../stylesheets/_characterDetail.scss";
 
 function CharacterDetail({ characters }) {
-  console.log(characters);
+  //console.log(characters);
   return (
     <div className="info-container">
       <section className="info">
@@ -13,7 +13,7 @@ function CharacterDetail({ characters }) {
         <article className="info-text">
           <ul className="info-text__list">
             <li className="info-text__list--elem">
-              <h2></h2>
+              <h2>{characters.name}</h2>
             </li>
             <li className="info-text__list--elem">
               Status: {/*characters.status*/}
@@ -22,7 +22,7 @@ function CharacterDetail({ characters }) {
               Specie: {/*characters.species*/}
             </li>
             <li className="info-text__list--elem">
-              Origin: {/*{props.origin}*/}
+              Origin: {/*{characters.origin}*/}
             </li>
             <li className="info-text__list--elem">
               Episode: {/*characters.episode*/}

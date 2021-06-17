@@ -5,6 +5,10 @@
   margin-right: 0px;
   align-self: center;
 
+  @media all and (min-width: 720px) {
+    grid-template-columns: 250px;
+  }
+
   &__img {
     list-style: none;
     background-color: rgb(10, 212, 248);
