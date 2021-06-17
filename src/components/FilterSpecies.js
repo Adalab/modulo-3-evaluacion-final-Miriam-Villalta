@@ -13,7 +13,11 @@ const FilterSpecies = (props) => {
       <label htmlFor="" className="form__container--specie">
         Especie{" "}
       </label>
-      <input type="text" className="search" onChange={handleChange} />
+      <select name="" id="" className="search" onChange={handleChange}>
+        <option value="Select">Selecciona</option>
+        <option value="human">Human</option>
+        <option value="alien">Alien</option>
+      </select>
     </>
   );
 };

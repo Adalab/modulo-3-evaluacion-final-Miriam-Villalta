@@ -52,7 +52,7 @@ const App = () => {
     const findCharacter = characters.find((characters) => {
       return characters.id === parseInt(characterId);
     });
-    console.log(findCharacter);
+
     if (findCharacter !== undefined) {
       return <CharacterDetail characters={findCharacter} />;
     }

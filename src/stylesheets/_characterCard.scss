@@ -1,12 +1,17 @@
 .card {
   display: grid;
-  grid-template-columns: 200px 200px 200px 200px;
-  grid-template-rows: 250px 250px 250px 250px 250px;
+  grid-template-columns: 200px;
+  grid-template-rows: 250px 250px 250px 250px 250px 250px 250px 250px 250px 250px 250px 250px 250px 250px 250px 250px 250px 250px 250px 250px;
   margin-right: 0px;
   align-self: center;
 
-  @media all and (min-width: 720px) {
-    grid-template-columns: 250px;
+  @media all and (min-width: 700px) {
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: 250px 250px 250px 250px 250px 250px 250px;
+  }
+  @media all and (min-width: 1200px) {
+    grid-template-columns: 200px 200px 200px 200px 200px;
+    grid-template-rows: 250px 250px 250px 250px;
   }
 
   &__img {
@@ -16,6 +21,7 @@
     flex-direction: column;
     align-self: center;
     justify-self: center;
+    margin: 10px;
 
     width: 150px;
     height: 215px;
