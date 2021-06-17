@@ -8,6 +8,7 @@ Se compone de dos elementos que filtran la búsqueda por nombre y especie, esta 
 
 ## Estructura de componentes
 
+```
 src
 ├─ components
 ├─ App.js
@@ -18,3 +19,4 @@ src
 ├─ Filters.js
 ├─ FilterSpecies.js
 └─ Header.js
+```
