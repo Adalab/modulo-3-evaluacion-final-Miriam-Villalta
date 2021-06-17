@@ -6,24 +6,33 @@ import CharacterDetail from "./CharacterDetail";
 import Filters from "./Filters";
 import { useEffect, useState } from "react";
 import api from "../services/api.js";
+import ls from "../services/localstorage";
 
 const App = () => {
   const [characters, setCharacters] = useState([]);
   const [filterName, setFilterName] = useState("");
   const [filterSpecie, setFilterSpecie] = useState("");
+  const [characterDetail, setcharacterDetail] = useState("");
 
   useEffect(() => {
-    api().then((data) => {
-      setCharacters(data);
-      console.log(data);
-    });
+    if (characters.length === 0) {
+      api().then((data) => {
+        setCharacters(data);
+      });
+    }
   }, []);
+
+  useEffect(() => {
+    ls.set("character detail", characterDetail);
+  }, [characters]);
 
   const handleFilters = (data) => {
     if (data.key === "name") {
       setFilterName(data.value);
-    } else {
+    } else if (data.key === "species") {
       setFilterSpecie(data.value);
+    } else {
+      return <h2>No hay ningún personaje que coincida con la búsqueda</h2>;
     }
   };
 
@@ -54,10 +63,15 @@ const App = () => {
   return (
     <div className="App">
       <Header />
-      <Filters handleFilters={handleFilters}></Filters>
-      <CharacterList characters={(characters, filteredCharacter)} />
       <Switch>
-        <Route path="/characters/:id" render={renderCharacterDetail} />
+        <Route exact path="/">
+          <Filters handleFilters={handleFilters}></Filters>
+          <CharacterList characters={(characters, filteredCharacter)} />
+        </Route>
+
+        <Route path="/characters/:id" render={renderCharacterDetail}>
+          <CharacterDetail characters={characters} />
+        </Route>
       </Switch>
     </div>
   );

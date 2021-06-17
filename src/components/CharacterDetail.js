@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import "../stylesheets/_characterDetail.scss";
-const CharacterDetail = ({ name, status, species, origin, episode }) => {
+
+function CharacterDetail({ characters }) {
+  console.log(characters);
   return (
     <div className="info-container">
       <section className="info">
@@ -11,17 +13,25 @@ const CharacterDetail = ({ name, status, species, origin, episode }) => {
         <article className="info-text">
           <ul className="info-text__list">
             <li className="info-text__list--elem">
-              <h2>{name}</h2>
+              <h2></h2>
             </li>
-            <li className="info-text__list--elem">Status: {status}</li>
-            <li className="info-text__list--elem">Specie: {species}</li>
-            <li className="info-text__list--elem">Origin: {origin}</li>
-            <li className="info-text__list--elem">Episode: {episode}</li>
+            <li className="info-text__list--elem">
+              Status: {/*characters.status*/}
+            </li>
+            <li className="info-text__list--elem">
+              Specie: {/*characters.species*/}
+            </li>
+            <li className="info-text__list--elem">
+              Origin: {/*{props.origin}*/}
+            </li>
+            <li className="info-text__list--elem">
+              Episode: {/*characters.episode*/}
+            </li>
           </ul>
         </article>
       </section>
     </div>
   );
-};
+}
 
 export default CharacterDetail;
