@@ -1,12 +1,12 @@
-# Evaluación final módulo3: React
+# Rick & Morty Character searcher with React
 
-Proyecto de bucador de personajes de la serie de animación Rick and Morty realizado con React.
+This proyect helps you to search your favorites character of the animation' series.
 
-## Partes del buscador
+## Parts
 
-Se compone de dos elementos que filtran la búsqueda por nombre y especie, esta última a elegir entre humano y alienigena.
+Two elements you search for name and species, last one between human and alien.
 
-## Estructura de componentes
+## Component's extructure
 
 ```
 src
